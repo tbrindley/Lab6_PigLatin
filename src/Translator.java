@@ -21,7 +21,7 @@ public class Translator {
             prePig = scan.nextLine();
         }
 
-        String[] preWords = prePig.split(" "); // splits string into individual words, separating them by looking for " "
+        String[] preWords = prePig.split(" ");   // splits string into individual words, separating them by looking for " "
 
         return preWords;
     }
@@ -96,13 +96,12 @@ public class Translator {
     }
 
     public static void main(String[] args) {
-        boolean keepLooping = true;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Welcome to the Grand Circus Translator \n ");
 
-        while (keepLooping){
-            String[] preWords = GetString();
+        do{
+            String[] preWords = GetString();  //stores string into a word array
             preWords = GetLowercase(preWords);
             PigConvert(preWords);
 
@@ -115,10 +114,10 @@ public class Translator {
             }
 
             if(yesNo.equalsIgnoreCase("n")){
-                keepLooping = false;
+                break;
             }
 
-        }
+        }while (true);
         System.out.println("Thanks for playing!");
     }
 
